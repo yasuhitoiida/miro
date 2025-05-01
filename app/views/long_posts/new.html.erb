@@ -1,10 +1,14 @@
-<%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
+<% content_for :title, "New long post" %>
+
+<h1>New long post</h1>
+
+<%= form_with(model: @long_post) do |form| %>
+  <% if @long_post.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <h2><%= pluralize(@long_post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
       <ul>
-        <% post.errors.each do |error| %>
+        <% @long_post.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -25,3 +29,8 @@
     <%= form.submit %>
   </div>
 <% end %>
+<br>
+
+<div>
+  <%= link_to "Back to posts", posts_path %>
+</div>

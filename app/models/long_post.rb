@@ -1,0 +1,2 @@
+class LongPost < Post
+end

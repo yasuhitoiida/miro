@@ -1,0 +1,2 @@
+class ShortPost < Post
+end
