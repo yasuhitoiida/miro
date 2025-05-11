@@ -1,6 +1,7 @@
 class LongPostsController < ApplicationController
   def new
     @long_post = LongPost.new
+    @users = User.all
   end
 
   def create
@@ -20,6 +21,6 @@ class LongPostsController < ApplicationController
   private
   # Only allow a list of trusted parameters through.
   def post_params
-    params.require(:long_post).permit(:title, :content)
+    params.require(:long_post).permit(:title, :content, :user_id)
   end
 end

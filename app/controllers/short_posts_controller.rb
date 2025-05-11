@@ -1,6 +1,7 @@
 class ShortPostsController < ApplicationController
   def new
     @short_post = ShortPost.new
+    @users = User.all
   end
 
   def create
@@ -20,6 +21,6 @@ class ShortPostsController < ApplicationController
   private
   # Only allow a list of trusted parameters through.
   def post_params
-    params.require(:short_post).permit(:title, :content)
+    params.require(:short_post).permit(:title, :content, :user_id)
   end
 end
