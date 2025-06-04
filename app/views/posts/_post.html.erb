@@ -14,4 +14,9 @@
     <%= post.user&.name %>
   </p>
 
+  <p>
+    <strong>Tags:</strong>
+    <%= post.tags.pluck(:name).join %>
+  </p>
+
 </div>
