@@ -1,7 +1,7 @@
-<div id="<%= dom_id post %>">
+<div id="<%= dom_id post %>" class="post">
   <p>
     <strong>Title:</strong>
-    <%= post.title %>
+    <%= link_to post.title, post_path(post) %>
   </p>
 
   <p>
@@ -16,7 +16,9 @@
 
   <p>
     <strong>Tags:</strong>
-    <%= post.tags.pluck(:name).join %>
+    <% post.tags.each do |tag| %>
+      <%= link_to tag.name, tag_path(tag), class: "tag-link" %>
+    <% end %>
   </p>
 
 </div>

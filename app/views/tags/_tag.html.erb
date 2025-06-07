@@ -1,6 +1,6 @@
 <div id="<%= dom_id tag %>">
   <p>
     <strong>Name:</strong>
-    <%= tag.name %>
+    <%= link_to tag.name, tag_path(tag) %>
   </p>
 </div>

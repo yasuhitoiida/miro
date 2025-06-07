@@ -3,6 +3,11 @@ class TagsController < ApplicationController
     @tags = Tag.all
   end
 
+  def show
+    @tag = Tag.find(params[:id])
+    @posts = @tag.posts
+  end
+
   def new
     @tag = Tag.new
   end

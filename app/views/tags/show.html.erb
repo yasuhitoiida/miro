@@ -1,0 +1,14 @@
+<h1><%= @tag.name %>のついた投稿</h1>
+
+<div class="posts">
+  <% if @posts.any? %>
+    <% @posts.each do |post| %>
+      <%= render "posts/post", post: post %>
+    <% end %>
+  <% else %>
+    <p>このタグがついた投稿はありません。</p>
+  <% end %>
+</div>
+
+<%= link_to "タグ一覧に戻る", tags_path, class: "btn btn-secondary" %>
+<%= link_to "投稿一覧", posts_path, class: "btn btn-primary" %>
